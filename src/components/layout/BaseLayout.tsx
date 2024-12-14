@@ -19,8 +19,8 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-gray-200">
-      <nav className="bg-black border-b border-gray-800">
+    <div className="flex flex-col min-h-screen bg-black text-gray-200">
+      <nav className="bg-black border-b border-gray-80 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20">
             <div className="flex">
@@ -88,7 +88,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
         )}
       </nav>
 
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
 
       {/* Footer */}
       <footer className="bg-gray-900 border-t border-gray-800 mt-12">

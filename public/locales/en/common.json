@@ -7,8 +7,8 @@
     },
     "hero": {
       "title": "SALEMENT SUCRÉ",
-      "subtitle": "THE ART OF PASTRY REVISITED",
-      "cta": "DISCOVER THE RECIPES"
+      "subtitle": "I KNOW WHERE YOU LIVE",
+      "cta": "RECIPES"
     },
     "recipe": {
       "difficulty": {
@@ -23,5 +23,10 @@
     },
     "social": {
         "instagram": "FOLLOW ME ON INSTAGRAM"
+    }, 
+    "recipes": {
+      "title": "Recipes",
+      "searchPlaceholder": "What do you crave ?",
+      "noResults": "No recipe matched your search ... yet"
     }
   }

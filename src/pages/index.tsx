@@ -47,7 +47,7 @@ export default function HomePage() {
   return (
     <BaseLayout>
       {/* Hero Section */}
-      <div className="relative h-screen -mt-20">
+      <div className="relative h-[calc(100vh-5rem)]">
   <div className="absolute inset-0 bg-black">
     {/* Image de fallback en arrière-plan */}
     

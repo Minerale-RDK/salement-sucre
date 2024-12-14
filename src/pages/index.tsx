@@ -1,114 +1,133 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+// src/pages/index.tsx
+import { useState } from 'react';
+import { GetStaticProps } from 'next';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Image from 'next/image';
+import Link from 'next/link';
+import BaseLayout from '@/components/layout/BaseLayout';
+import RecipeCard from '@/components/recipe/RecipeCard';
+import type { RecipeCard as RecipeCardType } from '@/types/recipe.types';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// À remplacer par un appel API réel
+const MOCK_RECIPES: RecipeCardType[] = [
+  {
+    id: 1,
+    title: "Tarte au Citron Meringuée",
+    image: "/images/placeholder.png",
+    prepTime: 60,
+    difficulty: "intermediate",
+    category: "Desserts",
+    description: "Une tarte au citron classique revisitée avec une meringue française légère et aérienne."
+  },
+  {
+    id: 2,
+    title: "Mille-feuille Vanille",
+    image: "/images/placeholder.png",
+    prepTime: 120,
+    difficulty: "expert",
+    category: "Viennoiseries",
+    description: "Un classique de la pâtisserie française avec une crème vanille onctueuse."
+  },
+  {
+    id: 3,
+    title: "Éclair au Chocolat",
+    image: "/images/placeholder.png",
+    prepTime: 90,
+    difficulty: "intermediate",
+    category: "Desserts",
+    description: "Des éclairs croustillants garnis d'une crème pâtissière au chocolat noir."
+  }
+];
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export default function HomePage() {
+  const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
+  const { t } = useTranslation('common');
 
-export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+    <BaseLayout>
+      {/* Hero Section */}
+      <div className="relative h-screen -mt-20">
+  <div className="absolute inset-0 bg-black">
+    {/* Image de fallback en arrière-plan */}
+    
+    
+    {/* Vidéo au premier plan */}
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover opacity-60 z-10"
     >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+<Image
+      src="/images/hero-fallback.png"
+      alt={t('hero.title')}
+      fill
+      className="object-cover opacity-40 z-0"
+      priority
+    />
+      <source src="/images/hero-video.mp4" type="video/mp4" />
+    </video>
+  </div>
+        
+        {/* Contenu Hero */}
+        <div className="relative h-full flex items-center justify-center text-center px-4 z-20">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-wider">
+              {t('hero.title')}
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 tracking-wide">
+              {t('hero.subtitle')}
+            </p>
+            <Link 
+              href="/recettes"
+              className="inline-block bg-white text-black px-8 py-4 text-lg font-semibold tracking-wider hover:bg-gray-200 transition-colors"
+            >
+              {t('hero.cta')}
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
+
+      {/* Latest Recipes Section */}
+      <section className="px-4 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-2 tracking-wider">
+            {t('recipe.latest')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {MOCK_RECIPES.map(recipe => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link 
+              href="/recettes"
+              className="inline-block border border-gray-600 text-gray-300 px-6 py-3 hover:bg-gray-800 hover:border-gray-500 transition-colors tracking-wider"
+            >
+              {t('recipe.viewAll')}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+    </BaseLayout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'fr', ['common'])),
+    },
+  };
+};

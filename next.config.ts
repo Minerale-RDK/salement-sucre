@@ -1,8 +1,24 @@
-import type { NextConfig } from "next";
+// next.config.js
+const { i18n } = require('./next-i18next.config');
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
+  i18n,
+  async rewrites() {
+    return [
+      {
+        source: '/recipes',
+        destination: '/recettes',
+        locale: false,
+      },
+      {
+        source: '/recipes/:slug',
+        destination: '/recettes/:slug',
+        locale: false,
+      }
+    ];
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

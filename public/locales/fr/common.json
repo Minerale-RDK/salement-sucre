@@ -1,0 +1,30 @@
+{
+    "nav": {
+      "home": "Accueil",
+      "recipes": "Recettes",
+      "categories": "Catégories",
+      "about": "À propos"
+    },
+    "hero": {
+      "title": "SALEMENT SUCRÉ",
+      "subtitle": "L'ART DE LA PÂTISSERIE REVISITÉ",
+      "cta": "DÉCOUVRIR LES RECETTES"
+    },
+    "recipe": {
+      "difficulty": {
+        "easy": "Facile",
+        "intermediate": "Intermédiaire",
+        "hard": "Difficile",
+        "expert": "Expert"
+      },
+      "time": "min",
+      "latest": "Dernières recettes",
+      "viewAll": "Voir toutes les recettes"
+    },
+    "social": {
+        "instagram": "SUIVEZ-MOI SUR INSTAGRAM"
+    }
+}
+
+  
+ 

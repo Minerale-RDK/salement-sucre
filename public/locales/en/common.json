@@ -1,0 +1,27 @@
+{
+    "nav": {
+      "home": "Home",
+      "recipes": "Recipes",
+      "categories": "Categories",
+      "about": "About"
+    },
+    "hero": {
+      "title": "SALEMENT SUCRÉ",
+      "subtitle": "THE ART OF PASTRY REVISITED",
+      "cta": "DISCOVER THE RECIPES"
+    },
+    "recipe": {
+      "difficulty": {
+        "easy": "Easy",
+        "intermediate": "Intermediate",
+        "hard": "Hard",
+        "expert": "Expert"
+      },
+      "time": "min",
+      "latest": "Latest recipes",
+      "viewAll": "View all recipes"
+    },
+    "social": {
+        "instagram": "FOLLOW ME ON INSTAGRAM"
+    }
+  }

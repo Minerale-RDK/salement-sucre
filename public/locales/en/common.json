@@ -1,32 +1,56 @@
 {
-    "nav": {
-      "home": "Home",
-      "recipes": "Recipes",
-      "categories": "Categories",
-      "about": "About"
+  "nav": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "categories": "Categories",
+    "about": "About",
+    "menu": "Menu"
+  },
+  "recipes": {
+    "title": "Our Recipes",
+    "searchPlaceholder": "Search for a recipe...",
+    "latest": "Latest recipes",
+    "viewAll": "View all recipes",
+    "noResults": "No recipes found",
+    "time": "minutes",
+    "filters": {
+      "category": "Category",
+      "sortBy": "Sort by",
+      "categories": {
+        "all": "All",
+        "desserts": "Desserts",
+        "viennoiseries": "Pastries",
+        "cakes": "Cakes",
+        "pies": "Pies"
+      }
     },
-    "hero": {
-      "title": "SALEMENT SUCRÉ",
-      "subtitle": "I KNOW WHERE YOU LIVE",
-      "cta": "RECIPES"
-    },
-    "recipe": {
-      "difficulty": {
-        "easy": "Easy",
-        "intermediate": "Intermediate",
-        "hard": "Hard",
-        "expert": "Expert"
-      },
-      "time": "min",
-      "latest": "Latest recipes",
-      "viewAll": "View all recipes"
-    },
-    "social": {
-        "instagram": "FOLLOW ME ON INSTAGRAM"
-    }, 
-    "recipes": {
-      "title": "Recipes",
-      "searchPlaceholder": "What do you crave ?",
-      "noResults": "No recipe matched your search ... yet"
+    "sortOptions": {
+      "recent": "Most recent",
+      "popular": "Most popular",
+      "prepTime": "Prep time"
     }
+  },
+  "recipe": {
+    "difficulty": {
+      "easy": "Easy",
+      "intermediate": "Intermediate",
+      "hard": "Hard",
+      "expert": "Expert"
+    },
+    "category": {
+      "desserts": "desserts",
+      "viennoiseries": "viennoiseries",
+      "cakes": "cakes",
+      "pies": "pies"
+    },
+    "time" :"minutes",
+    "ingredients": "Ingredients",
+    "steps": "Steps",
+    "servings": "servings"
+  },
+  "hero": {
+    "title": "SALEMENT SUCRÉ",
+    "subtitle": "Discover our delicious pastry recipes",
+    "cta": "View recipes"
   }
+}

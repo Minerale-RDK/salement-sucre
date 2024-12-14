@@ -21,7 +21,7 @@ const LanguageSelector = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+        className="flex items-center space-x-2 px-3 py-2 hover:bg-gray-700 transition-colors"
         aria-label="Select language"
       >
         <Globe className="w-4 h-4 text-gray-400" />
@@ -39,7 +39,7 @@ const LanguageSelector = () => {
           />
           
           {/* Menu déroulant */}
-          <div className="absolute right-0 mt-2 py-1 w-32 bg-gray-800 rounded-lg shadow-xl z-50 border border-gray-700">
+          <div className="absolute right-0 mt-2 py-1 w-32 bg-black shadow-xl z-50 border border-gray-700">
             {languages.map(({ code, label }) => (
               <button
                 key={code}
@@ -53,7 +53,7 @@ const LanguageSelector = () => {
                 <div className="flex items-center space-x-2">
                   <span>{label}</span>
                   {router.locale === code && (
-                    <span className="ml-auto text-purple-400">
+                    <span className="ml-auto text-white-400">
                       ✓
                     </span>
                   )}

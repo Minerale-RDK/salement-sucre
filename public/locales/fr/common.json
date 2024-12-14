@@ -1,30 +1,56 @@
 {
-    "nav": {
-      "home": "Accueil",
-      "recipes": "Recettes",
-      "categories": "Catégories",
-      "about": "À propos"
+  "nav": {
+    "home": "Accueil",
+    "recipes": "Recettes",
+    "categories": "Catégories",
+    "about": "À propos",
+    "menu": "Menu"
+  },
+  "recipes": {
+    "title": "Nos Recettes",
+    "searchPlaceholder": "Rechercher une recette...",
+    "latest": "Dernières recettes",
+    "viewAll": "Voir toutes les recettes",
+    "noResults": "Aucune recette trouvée",
+    "time": "minutes",
+    "filters": {
+      "category": "Catégorie",
+      "sortBy": "Trier par",
+      "categories": {
+        "all": "Toutes",
+        "desserts": "Desserts",
+        "viennoiseries": "Viennoiseries",
+        "cakes": "Gâteaux",
+        "pies": "Tartes"
+      }
     },
-    "hero": {
-      "title": "SALEMENT SUCRÉ",
-      "subtitle": "L'ART DE LA PÂTISSERIE REVISITÉ",
-      "cta": "DÉCOUVRIR LES RECETTES"
-    },
-    "recipe": {
-      "difficulty": {
-        "easy": "Facile",
-        "intermediate": "Intermédiaire",
-        "hard": "Difficile",
-        "expert": "Expert"
-      },
-      "time": "min",
-      "latest": "Dernières recettes",
-      "viewAll": "Voir toutes les recettes"
-    },
-    "social": {
-        "instagram": "SUIVEZ-MOI SUR INSTAGRAM"
+    "sortOptions": {
+      "recent": "Plus récentes",
+      "popular": "Plus populaires",
+      "prepTime": "Temps de préparation"
     }
+  },
+  "recipe": {
+    "difficulty": {
+      "easy": "Facile",
+      "intermediate": "Intermédiaire",
+      "hard": "Difficile",
+      "expert": "Expert"
+    },
+    "category": {
+      "desserts": "Desserts",
+      "viennoiseries": "Viennoiseries",
+      "cakes": "Gâteaux",
+      "pies": "Tartes"
+    },
+    "time" :"minutes",
+    "ingredients": "Ingrédients",
+    "steps": "Étapes",
+    "servings": "personnes"
+  },
+  "hero": {
+    "title": "SALEMENT SUCRÉ",
+    "subtitle": "Découvrez nos délicieuses recettes de pâtisserie",
+    "cta": "Voir les recettes"
+  }
 }
-
-  
- 

@@ -21,7 +21,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
   } = recipe;
 
   return (
-    <div className="bg-gray-900 rounded-lg overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+    <div className=" border border-gray-600 hover:border-gray-200 overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
       <Link href={`/recettes/${id}`}>
         <div className="relative h-64 w-full overflow-hidden">
           <Image
@@ -36,7 +36,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         <div className="p-6">
           <div className="flex items-center space-x-2 mb-3">
             <span className="px-3 py-1 bg-gray-800 text-xs text-gray-300 uppercase tracking-wider rounded-full">
-              {category}
+              {t(`recipe.category.${category}`)}
             </span>
             <span className="px-3 py-1 bg-gray-800 text-xs text-gray-300 uppercase tracking-wider rounded-full">
               {t(`recipe.difficulty.${difficulty}`)}

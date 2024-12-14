@@ -91,7 +91,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 mt-12">
+      <footer className="bg-black-900 border-t border-gray-800 mt-12">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* À propos */}
@@ -135,7 +135,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
               </div>
             </div>
           </div>
-          <div className="mt-8 border-t border-gray-800 pt-8">
+          <div className="mt-8 border-t border-white-800 pt-8">
             <p className="text-center text-gray-500">&copy; {new Date().getFullYear()} SALEMENT SUCRÉ. Tous droits réservés.</p>
           </div>
         </div>
